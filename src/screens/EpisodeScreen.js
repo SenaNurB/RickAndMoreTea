@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  View,
-  FlatList,
-} from "react-native";
+import { StyleSheet, SafeAreaView, View, FlatList } from "react-native";
 import React from "react";
 
 import useEpisode from "../api/useEpisode";
@@ -38,7 +32,7 @@ const EpisodeScreen = ({ route, navigation }) => {
   });
 
   const renderItem = ({ item }) => {
-    return <Character id={item} />;
+    return <Character id={item} navigation={navigation} />;
   };
 
   return (

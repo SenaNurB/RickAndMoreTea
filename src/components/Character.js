@@ -1,12 +1,16 @@
-import { StyleSheet, ScrollView, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import React from "react";
 import useCharacterData from "../api/useCharacterData";
 import Avatar from "./Avatar";
 import Loading from "./Loading";
 import Text from "./Text";
 
-const Character = ({ id }) => {
+const Character = ({ id, navigation }) => {
   const { status, data: character, error } = useCharacterData(id);
+
+  const handleClick = () => {
+    navigation.navigate("Character Detail", { id });
+  };
 
   if (status === "loading") {
     return <Loading />;
@@ -14,7 +18,7 @@ const Character = ({ id }) => {
     return <Text style={styles.error}>{error.message}</Text>;
   }
   return (
-    <TouchableOpacity style={styles.characterButton}>
+    <TouchableOpacity style={styles.characterButton} onPress={handleClick}>
       <Avatar
         size={90}
         rounded={90}
