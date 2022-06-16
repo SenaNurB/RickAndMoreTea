@@ -4,7 +4,7 @@ import React from "react";
 import Avatar from "./Avatar";
 import Text from "./Text";
 
-const EpisodeCard = ({ name, episode, date, id, navigation }) => {
+const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
   const handleClick = () => {
     navigation.navigate("Episode", { id });
   };
@@ -25,14 +25,17 @@ const EpisodeCard = ({ name, episode, date, id, navigation }) => {
           justifyContent: "center",
         }}
       >
-        <View style={styles.textContainer}>
-          <Text weight="bold" color="#D6D5A8">
-            Bölüm İsmi :{" "}
-          </Text>
-          <View style={{ width: "60%" }}>
-            <Text>{name}</Text>
+        {type === "summary" && (
+          <View style={styles.textContainer}>
+            <Text weight="bold" color="#D6D5A8">
+              Bölüm İsmi :{" "}
+            </Text>
+            <View style={{ width: "60%" }}>
+              <Text>{name}</Text>
+            </View>
           </View>
-        </View>
+        )}
+
         <View style={styles.textContainer}>
           <Text weight="bold" color="#D6D5A8">
             Sezon/Bölüm :{" "}

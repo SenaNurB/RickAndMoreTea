@@ -25,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
         id={episode.id}
         navigation={navigation}
         key={index}
+        type="summary"
       />
     );
   });
