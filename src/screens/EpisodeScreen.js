@@ -54,7 +54,9 @@ const EpisodeScreen = ({ route, navigation }) => {
           id={episode.id}
           type="episodeDetail"
         />
-        <Text style={styles.textHeader}>Characters in the Episode :</Text>
+        <Text style={styles.textHeader}>
+          Characters in the Episode ({characters.length}) :
+        </Text>
       </View>
 
       <FlatList
