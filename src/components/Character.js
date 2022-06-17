@@ -1,9 +1,11 @@
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import React from "react";
-import useCharacterData from "../api/useCharacterData";
+
 import Avatar from "./Avatar";
 import Loading from "./Loading";
 import Text from "./Text";
+
+import { useCharacterData } from "@api";
 
 const Character = ({ id, navigation }) => {
   const { status, data: character, error } = useCharacterData(id);
