@@ -4,6 +4,8 @@ import React from "react";
 import Avatar from "./Avatar";
 import Text from "./Text";
 
+import Colors from "../styles/Colors";
+
 const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
   const handleClick = () => {
     navigation.navigate("Episode", { id });
@@ -22,7 +24,7 @@ const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
       <View style={styles.episodeDetail}>
         {type === "summary" && (
           <View style={styles.textContainer}>
-            <Text weight="bold" color="#D6D5A8">
+            <Text weight="bold" color={Colors.textColor}>
               Bölüm İsmi :{" "}
             </Text>
             <View style={{ width: "60%" }}>
@@ -32,13 +34,13 @@ const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
         )}
 
         <View style={styles.textContainer}>
-          <Text weight="bold" color="#D6D5A8">
+          <Text weight="bold" color={Colors.textColor}>
             Sezon/Bölüm :{" "}
           </Text>
           <Text>{episode}</Text>
         </View>
         <View style={styles.textContainer}>
-          <Text weight="bold" color="#D6D5A8">
+          <Text weight="bold" color={Colors.textColor}>
             Tarih :{" "}
           </Text>
           <Text>{date}</Text>
@@ -52,7 +54,7 @@ export default EpisodeCard;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "#51557E",
+    backgroundColor: Colors.cardBackground,
     borderRadius: 16,
     flexDirection: "row",
     padding: 8,

@@ -1,6 +1,8 @@
 import { StyleSheet, View, Image } from "react-native";
 import React, { useEffect } from "react";
 
+import Colors from "../styles/Colors";
+
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#1B2430",
+    backgroundColor: Colors.backgroundColor,
   },
   image: {
     width: 300,

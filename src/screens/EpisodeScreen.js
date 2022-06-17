@@ -7,6 +7,8 @@ import EpisodeCard from "@components/EpisodeCard";
 import Character from "@components//Character";
 import ErrorMessage from "@components/ErrorMessage";
 
+import Colors from "../styles/Colors";
+
 import { useEpisode } from "@api";
 
 const EpisodeScreen = ({ route, navigation }) => {
@@ -69,7 +71,7 @@ export default EpisodeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1B2430",
+    backgroundColor: Colors.backgroundColor,
     padding: 16,
   },
   detailContainer: {
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
   },
   textHeader: {
     marginVertical: 16,
-    color: "#D6D5A8",
+    color: Colors.textColor,
     fontWeight: "bold",
     fontSize: 20,
   },

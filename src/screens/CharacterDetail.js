@@ -6,6 +6,8 @@ import Text from "@components/Text";
 import ErrorMessage from "@components/ErrorMessage";
 import Loading from "@components/Loading";
 
+import Colors from "../styles/Colors";
+
 import { useCharacterData } from "@api";
 
 const CharacterDetail = ({ route }) => {
@@ -32,13 +34,13 @@ const CharacterDetail = ({ route }) => {
       <View style={styles.characterDetail}>
         <View style={styles.row}>
           <View style={styles.textContainer}>
-            <Text weight="bold" color="#D6D5A8">
+            <Text weight="bold" color={Colors.textColor}>
               İsmi :{" "}
             </Text>
             <Text>{character.name}</Text>
           </View>
           <View style={styles.textContainer}>
-            <Text align="center" weight="bold" color="#D6D5A8">
+            <Text align="center" weight="bold" color={Colors.textColor}>
               Yaşadığı Yer :{" "}
             </Text>
             <Text align="center">{character.location.name}</Text>
@@ -47,13 +49,13 @@ const CharacterDetail = ({ route }) => {
 
         <View style={styles.row}>
           <View style={styles.textContainer}>
-            <Text weight="bold" color="#D6D5A8">
+            <Text weight="bold" color={Colors.textColor}>
               Cinsiyet :{" "}
             </Text>
             <Text>{character.gender}</Text>
           </View>
           <View style={styles.textContainer}>
-            <Text weight="bold" color="#D6D5A8">
+            <Text weight="bold" color={Colors.textColor}>
               Türü :{" "}
             </Text>
             <Text align="center">{character.species}</Text>
@@ -62,7 +64,7 @@ const CharacterDetail = ({ route }) => {
 
         <View style={styles.row}>
           <View style={styles.textContainer}>
-            <Text weight="bold" color="#D6D5A8">
+            <Text weight="bold" color={Colors.textColor}>
               Durumu :{" "}
             </Text>
             <Text>{character.status}</Text>
@@ -78,10 +80,10 @@ export default CharacterDetail;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1B2430",
+    backgroundColor: Colors.backgroundColor,
   },
   textContainer: {
-    backgroundColor: "#1B2430",
+    backgroundColor: Colors.backgroundColor,
     flex: 1,
     margin: 8,
     padding: 16,
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     paddingVertical: 50,
-    backgroundColor: "#51557E",
+    backgroundColor: Colors.cardBackground,
     marginTop: 16,
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,

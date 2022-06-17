@@ -6,6 +6,8 @@ import EpisodeCard from "@components/EpisodeCard";
 import Loading from "@components/Loading";
 import ErrorMessage from "@components/ErrorMessage";
 
+import Colors from "../styles/Colors";
+
 import { useEpisode } from "@api";
 
 const HomeScreen = ({ navigation }) => {
@@ -47,7 +49,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1B2430",
+    backgroundColor: Colors.backgroundColor,
     padding: 16,
   },
 });
