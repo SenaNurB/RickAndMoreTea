@@ -1,11 +1,11 @@
 import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
 import React from "react";
 
-import Text from "../components/Text";
-import EpisodeCard from "../components/EpisodeCard";
-import Loading from "../components/Loading";
+import Text from "@components/Text";
+import EpisodeCard from "@components/EpisodeCard";
+import Loading from "@components/Loading";
 
-import useEpisode from "../api/useEpisode";
+import { useEpisode } from "@api";
 
 const HomeScreen = ({ navigation }) => {
   const { status, data: episodes, error } = useEpisode("");

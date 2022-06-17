@@ -1,10 +1,10 @@
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 
-import Avatar from "../components/Avatar";
-import Text from "../components/Text";
+import Avatar from "@components/Avatar";
+import Text from "@components/Text";
 
-import useCharacterData from "../api/useCharacterData";
+import { useCharacterData } from "@api";
 
 const CharacterDetail = ({ route }) => {
   const { id } = route.params;

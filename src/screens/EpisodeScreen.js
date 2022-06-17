@@ -1,12 +1,12 @@
 import { StyleSheet, SafeAreaView, View, FlatList } from "react-native";
 import React from "react";
 
-import useEpisode from "../api/useEpisode";
+import Loading from "@components/Loading";
+import Text from "@components/Text";
+import EpisodeCard from "@components/EpisodeCard";
+import Character from "@components//Character";
 
-import Loading from "../components/Loading";
-import Text from "../components/Text";
-import EpisodeCard from "../components/EpisodeCard";
-import Character from "../components/Character";
+import { useEpisode } from "@api";
 
 const EpisodeScreen = ({ route, navigation }) => {
   const { id } = route.params;

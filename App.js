@@ -4,7 +4,7 @@ import axios from "axios";
 import AppNavigator from "./src/navigation/AppNavigator";
 import Providers from "./src/providers";
 
-import env from "./env.config";
+import env from "@env";
 
 function setAxiosConfig() {
   axios.defaults.baseURL = env.BACKEND_URL;
