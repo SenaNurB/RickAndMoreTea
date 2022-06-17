@@ -16,7 +16,7 @@ const Text = ({
   ...props
 }) => {
   const styles = {
-    fontSize: size ? size : 16,
+    fontSize: size ? size : 14,
     color: color ? color : Colors.white,
     ...(italic && { fontStyle: "italic" }),
     ...(weight && { fontWeight: weight }),

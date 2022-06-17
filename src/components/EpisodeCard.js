@@ -25,7 +25,7 @@ const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
         {type === "summary" && (
           <View style={styles.textContainer}>
             <Text weight="bold" color={Colors.textColor}>
-              Bölüm İsmi :{" "}
+              Episode Name :{" "}
             </Text>
             <View style={{ width: "60%" }}>
               <Text>{name}</Text>
@@ -33,15 +33,23 @@ const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
           </View>
         )}
 
-        <View style={styles.textContainer}>
+        <View
+          style={
+            type === "episodeDetail" ? styles.episodeCard : styles.textContainer
+          }
+        >
           <Text weight="bold" color={Colors.textColor}>
-            Sezon/Bölüm :{" "}
+            Season/Episode :{" "}
           </Text>
           <Text>{episode}</Text>
         </View>
-        <View style={styles.textContainer}>
+        <View
+          style={
+            type === "episodeDetail" ? styles.episodeCard : styles.textContainer
+          }
+        >
           <Text weight="bold" color={Colors.textColor}>
-            Tarih :{" "}
+            Date :{" "}
           </Text>
           <Text>{date}</Text>
         </View>
@@ -57,17 +65,24 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.cardBackground,
     borderRadius: 16,
     flexDirection: "row",
-    padding: 8,
+    paddingVertical: 8,
     alignItems: "center",
     marginTop: 16,
   },
   avatarContainer: {
     alignItems: "center",
     justifyContent: "center",
-    padding: 5,
+    padding: 8,
+  },
+  episodeCard: {
+    flexDirection: "row",
+    marginRight: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
   textContainer: {
     flexDirection: "row",
+    marginRight: 16,
   },
   episodeDetail: {
     flex: 1,

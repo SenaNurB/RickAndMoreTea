@@ -52,8 +52,9 @@ const EpisodeScreen = ({ route, navigation }) => {
           episode={episode.episode}
           date={episode.air_date}
           id={episode.id}
+          type="episodeDetail"
         />
-        <Text style={styles.textHeader}>Bölümdeki Karakterler :</Text>
+        <Text style={styles.textHeader}>Characters in the Episode :</Text>
       </View>
 
       <FlatList

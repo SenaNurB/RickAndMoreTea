@@ -36,7 +36,7 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text align="center" weight="bold" size={20}>
-          Rick and Morty Bölümleri
+          Rick And Morty Episodes
         </Text>
         {episodeCards}
       </ScrollView>

@@ -35,13 +35,13 @@ const CharacterDetail = ({ route }) => {
         <View style={styles.row}>
           <View style={styles.textContainer}>
             <Text weight="bold" color={Colors.textColor}>
-              İsmi :{" "}
+              Character Name:{" "}
             </Text>
             <Text>{character.name}</Text>
           </View>
           <View style={styles.textContainer}>
             <Text align="center" weight="bold" color={Colors.textColor}>
-              Yaşadığı Yer :{" "}
+              Location :{" "}
             </Text>
             <Text align="center">{character.location.name}</Text>
           </View>
@@ -50,13 +50,13 @@ const CharacterDetail = ({ route }) => {
         <View style={styles.row}>
           <View style={styles.textContainer}>
             <Text weight="bold" color={Colors.textColor}>
-              Cinsiyet :{" "}
+              Gender :{" "}
             </Text>
             <Text>{character.gender}</Text>
           </View>
           <View style={styles.textContainer}>
             <Text weight="bold" color={Colors.textColor}>
-              Türü :{" "}
+              Species :{" "}
             </Text>
             <Text align="center">{character.species}</Text>
           </View>
@@ -65,7 +65,7 @@ const CharacterDetail = ({ route }) => {
         <View style={styles.row}>
           <View style={styles.textContainer}>
             <Text weight="bold" color={Colors.textColor}>
-              Durumu :{" "}
+              Status :{" "}
             </Text>
             <Text>{character.status}</Text>
           </View>
