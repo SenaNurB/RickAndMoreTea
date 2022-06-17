@@ -33,14 +33,14 @@ const HomeScreen = ({ navigation }) => {
     );
   });
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.container}>
+    <View style={styles.container}>
+      <ScrollView style={styles.listContainer}>
         <Text align="center" weight="bold" size={20}>
           Rick And Morty Episodes
         </Text>
         {episodeCards}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -51,5 +51,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.backgroundColor,
     padding: 16,
+  },
+  listContainer: {
+    marginBottom: 20,
   },
 });
