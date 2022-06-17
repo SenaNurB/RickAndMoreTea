@@ -19,12 +19,7 @@ const EpisodeCard = ({ name, episode, date, id, navigation, type }) => {
           }}
         />
       </View>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-        }}
-      >
+      <View style={styles.episodeDetail}>
         {type === "summary" && (
           <View style={styles.textContainer}>
             <Text weight="bold" color="#D6D5A8">
@@ -69,5 +64,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 5,
   },
-  textContainer: { flexDirection: "row" },
+  textContainer: {
+    flexDirection: "row",
+  },
+  episodeDetail: {
+    flex: 1,
+    justifyContent: "center",
+  },
 });

@@ -4,6 +4,7 @@ import React from "react";
 import Text from "@components/Text";
 import EpisodeCard from "@components/EpisodeCard";
 import Loading from "@components/Loading";
+import ErrorMessage from "@components/ErrorMessage";
 
 import { useEpisode } from "@api";
 
@@ -13,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
   if (status === "loading") {
     return <Loading />;
   } else if (status === "error") {
-    return <Text style={styles.error}>{error.message}</Text>;
+    return <ErrorMessage message={error.message} />;
   }
 
   const episodeCards = episodes.results.map((episode, index) => {
@@ -36,11 +37,6 @@ const HomeScreen = ({ navigation }) => {
           Rick and Morty Bölümleri
         </Text>
         {episodeCards}
-
-        {/* <Button
-        title="Go to Episode"
-        onPress={() => navigation.navigate("Episodes")}
-      /> */}
       </ScrollView>
     </SafeAreaView>
   );

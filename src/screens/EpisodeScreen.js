@@ -5,6 +5,7 @@ import Loading from "@components/Loading";
 import Text from "@components/Text";
 import EpisodeCard from "@components/EpisodeCard";
 import Character from "@components//Character";
+import ErrorMessage from "@components/ErrorMessage";
 
 import { useEpisode } from "@api";
 
@@ -19,7 +20,7 @@ const EpisodeScreen = ({ route, navigation }) => {
   if (episodeStatus === "loading") {
     return <Loading />;
   } else if (episodeStatus === "error") {
-    return <Text style={styles.error}>{episodeError.message}</Text>;
+    return <ErrorMessage message={episodeError.message} />;
   }
 
   const ids = episode.characters.map((character, index) => {
@@ -43,23 +44,14 @@ const EpisodeScreen = ({ route, navigation }) => {
         </Text>
       </View>
 
-      <View style={{ paddingHorizontal: 16 }}>
+      <View style={styles.detailContainer}>
         <EpisodeCard
           name={episode.name}
           episode={episode.episode}
           date={episode.air_date}
           id={episode.id}
         />
-        <Text
-          style={{
-            marginVertical: 16,
-            color: "#D6D5A8",
-            fontWeight: "bold",
-            fontSize: 20,
-          }}
-        >
-          Bölümdeki Karakterler :
-        </Text>
+        <Text style={styles.textHeader}>Bölümdeki Karakterler :</Text>
       </View>
 
       <FlatList
@@ -79,5 +71,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#1B2430",
     padding: 16,
+  },
+  detailContainer: {
+    paddingHorizontal: 16,
+  },
+  textHeader: {
+    marginVertical: 16,
+    color: "#D6D5A8",
+    fontWeight: "bold",
+    fontSize: 20,
   },
 });

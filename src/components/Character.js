@@ -4,6 +4,7 @@ import React from "react";
 import Avatar from "./Avatar";
 import Loading from "./Loading";
 import Text from "./Text";
+import ErrorMessage from "@components/ErrorMessage";
 
 import { useCharacterData } from "@api";
 
@@ -17,7 +18,7 @@ const Character = ({ id, navigation }) => {
   if (status === "loading") {
     return <Loading />;
   } else if (status === "error") {
-    return <Text style={styles.error}>{error.message}</Text>;
+    return <ErrorMessage message={error.message} />;
   }
   return (
     <TouchableOpacity style={styles.characterButton} onPress={handleClick}>
@@ -28,7 +29,7 @@ const Character = ({ id, navigation }) => {
           image: character.image,
         }}
       />
-      <View style={{ width: "100%", alignItems: "center" }}>
+      <View style={styles.nameContainer}>
         <Text align="center">{character.name}</Text>
       </View>
     </TouchableOpacity>
@@ -43,5 +44,9 @@ const styles = StyleSheet.create({
     margin: 8,
     alignItems: "center",
     justifyContent: "center",
+  },
+  nameContainer: {
+    width: "100%",
+    alignItems: "center",
   },
 });
